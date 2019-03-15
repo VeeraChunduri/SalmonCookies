@@ -1,0 +1,90 @@
+body {
+    font-family: helvetica;
+    background-color: #FF9999
+}
+
+/* base styles */
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/* site styles */
+
+header {
+    background: rgb(0, 0, 0);
+    height: 100px;
+}
+
+h1{
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #33c7db;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+  }
+
+header section {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header img {
+    float: left;
+    margin-right: 50px;
+    margin-top: 15px;
+}
+
+header nav li {
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 45px;
+}
+
+main {
+    width: 960px;
+    margin: 20px auto;
+}
+
+.sub-banners li {
+    float: left;
+    margin: 30px 30px 30px 0;
+}
+
+.sub-banners li:nth-child(3) {
+    margin-right: 0;
+}
+
+.left {
+    float: left;
+    margin-right: 30px;
+}
+
+.right h2 {
+    font-size: 26px;
+    text-transform: capitalize;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.right p {
+    line-height: 26px;
+    height: 275px;
+    overflow: auto;
+}
+
+.right button {
+    border: none;
+    padding: 5px 10px;
+    background: #000;
+    color: #fff;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+footer {
+    background: #232F3E;
+    height: 100px;
+    margin-top: 30px;
+}
