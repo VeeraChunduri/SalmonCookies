@@ -1,44 +1,25 @@
 'use strict';
+function Cookies(name,minNumCust,maxNumCust,avgCookieSale) {
+  this.name = name;
+  this.minNumCust = minNumCust;
+  this.maxNumCust = maxNumCust;
+  this.avgCookieSale = avgCookieSale;
+}
+Cookies.prototype.getCustCount=function(min, max){
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; 
+}
 
-var firstandpike = {
-    name :'1st and Pike',
-    minNumCust: 23,
-    maxNumCust: 65,
-    avgCookieSale: 6.3
-  
-    }
-
-var seatac = {
-    name :'SeaTac Airport',    
-    minNumCust : 3,
-    maxNumCust : 24,
-    avgCookieSale : 1.2
-    }
-
-var seattlecenter = {
-    name :'Seattle Center',    
-    minNumCust : 11,
-    maxNumCust : 38,
-    avgCookieSale : 3.7
-    }
-
-var capitolhill= {
-    name :'Capitol Hill',    
-    minNumCust : 20,
-    maxNumCust : 38,
-    avgCookieSale : 2.3
-    }
-
-var alki = {
-    name :'Alki',    
-    minNumCust : 2,
-    maxNumCust : 16,
-    avgCookieSale : 4.6
-    }
+var firstandpike = new Cookies('1st and Pike',23,65,6.3);
+var seatac = new Cookies('SeaTac Airport',3,24,1.2);
+var seattlecenter = new Cookies('Seattle Center',11,38,3.7);
+var capitolhill = new Cookies('Capitol Hill',20,38,2.3);
+var alki = new Cookies('Alki',2,16,4.6);
 
 var stores = [firstandpike, seatac, seattlecenter, capitolhill, alki];    
 
-  var StoreList = document.getElementById('store-list');
+  var StoreList = document.getElementById('store-sales');
   var storetime;
   var numCust;
   var numCookies;
@@ -63,10 +44,9 @@ var stores = [firstandpike, seatac, seattlecenter, capitolhill, alki];
         storetime = (i-12) + ' pm' 
     }
 
-
     var liEl = document.createElement('li');
 
-    numCust = getCustCount(stores[storeCount].minNumCust,stores[storeCount].maxNumCust);
+    numCust = stores[storeCount].getCustCount(stores[storeCount].minNumCust,stores[storeCount].maxNumCust);
     numCookies = Math.ceil(numCust * stores[storeCount].avgCookieSale);
     liEl.textContent = storetime + ": " + numCookies + " Cookies" ;
     
@@ -78,12 +58,6 @@ var stores = [firstandpike, seatac, seattlecenter, capitolhill, alki];
 
   liEl.textContent = "Total : " + totCookies + " Cookies"; 
   StoreList.appendChild(liEl);
- 
-  storeCount = storeCount + 1;
-}
 
-function getCustCount(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; 
+  storeCount = storeCount + 1;
 }
