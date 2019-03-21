@@ -20,6 +20,7 @@ var stores = [firstandpike, seatac, seattlecenter, capitolhill, alki];
 
   var StoreList = document.getElementById('store-table');
   let rows = new Array(13);
+
   var storetime;
   var numCust;
   var numCookies;
@@ -55,6 +56,7 @@ var stores = [firstandpike, seatac, seattlecenter, capitolhill, alki];
    
   } //heading is constructed
 
+
 var th = document.createElement('th');
 th.style.border="1px solid black"
 var header = document.createTextNode("Daily Location Total"); 
@@ -72,6 +74,7 @@ for (var i = 6; i <= 19; i++)
     tdd.appendChild(tx);
     trr.appendChild(tdd);
     StoreList.appendChild(trr);  
+
     
     for (var i = 6; i <= 19; i++) 
     {  
@@ -93,6 +96,7 @@ for (var i = 6; i <= 19; i++)
     trr.appendChild(td);
     storeCount++;
   }
+
 var tr = document.createElement('tr');
 tr.style.border="1px solid black";
 var td = document.createElement('td');
@@ -110,5 +114,8 @@ for (i=0; i<rows.length;i++) {
     tr.appendChild(td);
 }
 StoreList.appendChild(tr);
+
+
+  
 }
   generatetable();
